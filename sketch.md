@@ -29,7 +29,7 @@ Follow the instructions below to create a professional diagram of the the hand-d
 ### Layout:
 - Use a solid rounded rectangle (#CED2D9, linewidth=1.5) as the outer container.
 - Place the loop/group label centered, at least 0.15 inches above the outer container top edge — never touching or crossing the border line. Color white (#FFFFFF).
-- Place boxes in a tight 2x2 grid — minimize horizontal and vertical whitespace between boxes.
+- Place boxes in a 2x2 grid with a visible center gap of at least 0.5 inches both horizontally and vertically — enough room for the Governance label to sit without touching any box. Make boxes slightly smaller to accommodate this gap.
 - Center any mid-diagram labels (e.g. "Governance") at the exact center of the 2x2 grid — plain text, no background, no highlight, color white (#FFFFFF). Position it precisely in the gap between all four boxes, not overlapping any box boundary.
 
 ## Method
