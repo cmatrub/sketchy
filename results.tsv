@@ -1,0 +1,18 @@
+commit	score	status	description
+d78ad1c	2	keep	baseline (mar25b iter2 starting point)
+afd4de9	2	discard	brand colors: blue accent arrows, brand grey fills
+f358a29	3	keep	Blue Accent (#9DC7FE) fill on boxes
+08ea591	3	keep	bold black text, no shadows, solid outer border
+ead15a2	3	keep	normal text, arrows with shrink
+598723f	4	keep	no text highlights, edge-midpoint arrows, no extra arrows
+7e97efe	2	discard	outer container fix + padding — boxes shrank, looked worse
+d2e758d	2	discard	smaller fonts + transparent container — worse again
+c0e704c	5	keep	font size 10, tight bbox — new high, stray Governance arrow bug
+0dbcbd0	6	keep	no arrows on labels, white bbox on Governance for visibility
+104f8fa	7	keep	no highlight bbox on labels, contrast color instead
+ca72598	8	keep	loop label above border, Governance as white-on-blue pill
+91f072c	9	keep	loop label clear above border, Governance plain dark text no highlight
+97e6a5e	10	keep	white text for Repeat recursive loop and Governance — perfect score
+ab6979e	10	keep	white arrows + Governance in center gap — user rated 12/10
+1ac70ab	10	keep	smaller boxes with 0.5in center gap — user rated 15/10
+78720bf	2	discard	thick arrows overlapped with boxes, looked messy
