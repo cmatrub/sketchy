@@ -9,7 +9,6 @@ To set up a new experiment, work with the user to:
 1. **Agree on a run tag**: propose a tag based on today's date (e.g. `mar5`). The branch `sketchy/<tag>` must not already exist — this is a fresh run.
 2. **Create the branch**: `git checkout -b sketchy/<tag>` from current master.
 3. **Read the in-scope files**: The repo is small. Read these files for full context:
-   - `README.md` — repository context.
    - `sketch.md` — the file you modify. it's a skill for Claude Code to use. it has detailed instructions for the task.
 4. **Initialize results.tsv**: Create `results.tsv` with just the header row. The baseline will be recorded after the first iteration.
 6. **Confirm and go**: Confirm setup looks good.
@@ -25,7 +24,7 @@ Take sketch.md and install in Claude Code as a skill. Overwrite if one already e
 - Install any python packages or dependencies required by Claude Code to draw using `uv add <package-name>` followed by `uv sync`.
 
 **What you CANNOT do:**
-- Modify `prepare.py`. It is read-only. It contains the fixed evaluation, data loading, tokenizer, and training constants (time budget, sequence length, etc).
+- Modify `autosketch.md`. It is read-only.
 
 **The goal is simple: get the highest score.** Everything is fair game: change the sketch.md, the tools needed. The only constraint is that skill runs without crashing.
 
@@ -76,15 +75,18 @@ The experiment runs on a dedicated branch (e.g. `sketchy/mar25` or `sketchy/mar2
 LOOP UNTIL USER ABORTS:
 
 1. Look at the git state: the current branch/commit we're on
-2. Tune `sketch.md` with an experimental idea by directly hacking the prompt.
+2. Tune `sketch.md` with an experimental idea by directly hacking the prompt and tools.
 3. git commit
 4. install the skill sketch.md in Claude Code. overwrite the previous version if one exists already.
-4. Run the iteration: `/sketch concept-sketch.md output.png` (redirect everything — do NOT use tee or let output flood your context)
-5. Read what's in output.png that the skill generated
-6. If output.png is empty, the iteration crashed. Record a score of 0 in results.tsv file
-7. If output.png is NOT empty, ask the user to rate the sketch on a scale of 1 to 10 (1 being worst, 10 being best). Record the rating as the score for this iteration in the results.tsv file. (NOTE: do not commit the results.tsv file, leave it untracked by git)
-8. If score improved (higher), you "advance" the branch, keeping the git commit
-9. If score is equal or worse, you git reset back to where you started
+5. Run the iteration: `/sketch concept-sketch.md output.png` (redirect everything — do NOT use tee or let output flood your context)
+6. Read what's in output.png that the skill generated
+7. If output.png is empty, the iteration crashed. Record a score of 0 in results.tsv file
+8. If output.png is NOT empty, ask the user to rate the sketch on a scale of 1 to 10 (1 being worst, 10 being best). Record the rating as the score for this iteration in the results.tsv file. (NOTE: do not commit the results.tsv file, leave it untracked by git)
+9. If score improved (higher), you "advance" the branch, keeping the git commit
+10. If score is equal or worse, you git reset back to where you started
+11. Ask the user for a single-sentence feedback on output.png
+12. Use the user's feedback to come up with ideas for improvement for the next iteration
+
 
 The idea is that you are a completely autonomous skill developer trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
 
