@@ -27,15 +27,15 @@ Follow the instructions below to create a professional diagram of the the hand-d
 - Where possible simplify.
 
 ### Layout:
-- Use a light dashed rounded rectangle (#CED2D9, dash pattern (0,(6,4))) as the outer container.
-- Place the loop/group label centered, overlaid on the top edge of the outer container with a white background bbox so it visually clips the dashed line.
+- Use a solid rounded rectangle (#CED2D9, linewidth=1.5) as the outer container.
+- Place the loop/group label centered, overlaid on the top edge of the outer container with a white background bbox so it visually clips the border line.
 - Place boxes in a tight 2x2 grid — minimize horizontal and vertical whitespace between boxes.
 - Center any mid-diagram labels (e.g. "Governance") between the four boxes.
 
 ## Method
 - Step 1: Understand what the concept diagram in $0 is trying to convey.
 - Step 2: Write down the instructions to draw the diagram.
-- Step 3: Use Python with matplotlib. Set `matplotlib.rcParams['font.family'] = 'Helvetica Neue'` for clean typography. Use FancyBboxPatch (rounding_size=0.14, facecolor=#9DC7FE, edgecolor=#464B51, linewidth=1.5) for boxes, add a subtle offset shadow patch behind each box (facecolor=#CED2D9, alpha=0.6, offset +0.03/-0.03). Use annotate() with arrowprops for straight arrows, color=#464B51. All text inside boxes in color=#464B51. Render at 150 DPI, 8x4 inches, transparent background.
+- Step 3: Use Python with matplotlib. Set `matplotlib.rcParams['font.family'] = 'Helvetica Neue'` for clean typography. Use FancyBboxPatch (rounding_size=0.14, facecolor=#9DC7FE, edgecolor=#464B51, linewidth=1.5) for boxes — no shadow patches. Use annotate() with arrowprops for straight arrows, color=#464B51. All text inside boxes in color=#000000, fontweight='bold' for the main label and color=#000000 for the subtitle. Render at 150 DPI, 8x4 inches, transparent background.
 - Step 4: Simplify where possible to keep the diagram clean.
 - Step 5: Check for accuracy.
 - Step 6: Output the image.
