@@ -35,7 +35,7 @@ Follow the instructions below to create a professional diagram of the the hand-d
 ## Method
 - Step 1: Understand what the concept diagram in $0 is trying to convey.
 - Step 2: Write down the instructions to draw the diagram.
-- Step 3: Use Python with matplotlib. Set `matplotlib.rcParams['font.family'] = 'Helvetica Neue'` for clean typography. Use FancyBboxPatch (rounding_size=0.14, facecolor=#F8F9FA, edgecolor=#464B51) for boxes, add a subtle offset shadow patch behind each box (facecolor=#E0E3E7, alpha=0.5, offset +0.03/-0.03). Use annotate() with arrowprops for straight arrows. Render at 150 DPI, 8x4 inches, transparent background.
+- Step 3: Use Python with matplotlib. Set `matplotlib.rcParams['font.family'] = 'Helvetica Neue'` for clean typography. Use FancyBboxPatch (rounding_size=0.14, facecolor=#9DC7FE, edgecolor=#464B51, linewidth=1.5) for boxes, add a subtle offset shadow patch behind each box (facecolor=#CED2D9, alpha=0.6, offset +0.03/-0.03). Use annotate() with arrowprops for straight arrows, color=#464B51. All text inside boxes in color=#464B51. Render at 150 DPI, 8x4 inches, transparent background.
 - Step 4: Simplify where possible to keep the diagram clean.
 - Step 5: Check for accuracy.
 - Step 6: Output the image.
