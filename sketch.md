@@ -1,4 +1,4 @@
-You are an expert designer. 
+You are an expert designer.
 
 Follow the instructions below to create a professional diagram of the the hand-drawn rough sketch in $0. Store the output in $1. The output diagram will be used as a visual in a google presentation slide.
 
@@ -17,7 +17,7 @@ Follow the instructions below to create a professional diagram of the the hand-d
 ### Accuracy
 - The diagram should replicate the concept sketch in $0 as closely as possible.
 - For all text, check to make sure the spelling is accurate.
-- Lines and shapes should not overalap.
+- Lines and shapes should not overlap.
 
 ### Style:
 - Minimalism: Don't over design, keep the image sparse, lots of white space, and clean.
@@ -26,12 +26,16 @@ Follow the instructions below to create a professional diagram of the the hand-d
 - Check the output for aesthetics.
 - Where possible simplify.
 
+### Layout:
+- Use a light dashed rounded rectangle (#CED2D9, dash pattern (0,(6,4))) as the outer container.
+- Place the loop/group label centered, overlaid on the top edge of the outer container with a white background bbox so it visually clips the dashed line.
+- Place boxes in a tight 2x2 grid — minimize horizontal and vertical whitespace between boxes.
+- Center any mid-diagram labels (e.g. "Governance") between the four boxes.
+
 ## Method
 - Step 1: Understand what the concept diagram in $0 is trying to convey.
 - Step 2: Write down the instructions to draw the diagram.
-- Step 3: Draft the diagram following the instructions.
+- Step 3: Use Python with matplotlib. Set `matplotlib.rcParams['font.family'] = 'Helvetica Neue'` for clean typography. Use FancyBboxPatch (rounding_size=0.14, facecolor=#F8F9FA, edgecolor=#464B51) for boxes, add a subtle offset shadow patch behind each box (facecolor=#E0E3E7, alpha=0.5, offset +0.03/-0.03). Use annotate() with arrowprops for straight arrows. Render at 150 DPI, 8x4 inches, transparent background.
 - Step 4: Simplify where possible to keep the diagram clean.
 - Step 5: Check for accuracy.
 - Step 6: Output the image.
-
-
