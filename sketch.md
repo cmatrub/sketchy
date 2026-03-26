@@ -28,9 +28,9 @@ Follow the instructions below to create a professional diagram of the the hand-d
 
 ### Layout:
 - Use a solid rounded rectangle (#CED2D9, linewidth=1.5) as the outer container.
-- Place the loop/group label centered, overlaid on the top edge of the outer container — plain text, no background bbox. Color #464B51 on light backgrounds, white on dark.
+- Place the loop/group label centered, fully above the outer container — not overlapping the border line. Color #464B51.
 - Place boxes in a tight 2x2 grid — minimize horizontal and vertical whitespace between boxes.
-- Center any mid-diagram labels (e.g. "Governance") between the four boxes — plain text, no background bbox. Choose text color for contrast: #464B51 on light backgrounds, white on dark backgrounds.
+- Center any mid-diagram labels (e.g. "Governance") between the four boxes. Since this sits over crossing arrows, render it with white text on a #9DC7FE rounded pill background (boxstyle='round,pad=0.3', facecolor=#9DC7FE, edgecolor='none') so it's readable without looking like a box.
 
 ## Method
 - Step 1: Understand what the concept diagram in $0 is trying to convey. Identify only the arrows explicitly shown between the four main boxes — do not add arrows to or from any text labels (e.g. "Governance" is a floating label only, never an arrow endpoint).
