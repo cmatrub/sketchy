@@ -30,12 +30,12 @@ Follow the instructions below to create a professional diagram of the the hand-d
 - Use a solid rounded rectangle (#CED2D9, linewidth=1.5) as the outer container.
 - Place the loop/group label centered, at least 0.15 inches above the outer container top edge — never touching or crossing the border line. Color white (#FFFFFF).
 - Place boxes in a tight 2x2 grid — minimize horizontal and vertical whitespace between boxes.
-- Center any mid-diagram labels (e.g. "Governance") at the exact center of the 2x2 grid — plain text, no background, no highlight, color white (#FFFFFF). The arrows connect box edge midpoints so the absolute center is arrow-free.
+- Center any mid-diagram labels (e.g. "Governance") at the exact center of the 2x2 grid — plain text, no background, no highlight, color white (#FFFFFF). Position it precisely in the gap between all four boxes, not overlapping any box boundary.
 
 ## Method
 - Step 1: Understand what the concept diagram in $0 is trying to convey. Identify only the arrows explicitly shown between the four main boxes — do not add arrows to or from any text labels (e.g. "Governance" is a floating label only, never an arrow endpoint).
 - Step 2: Write down the instructions to draw the diagram.
-- Step 3: Use Python with matplotlib. Set `matplotlib.rcParams['font.family'] = 'Helvetica Neue'` for clean typography. Use FancyBboxPatch (rounding_size=0.14, facecolor=#9DC7FE, edgecolor=#464B51, linewidth=1.5) for boxes — no shadow patches. Draw arrows by connecting box edge midpoints (right-center→left-center for horizontal, bottom-center→top-center for vertical) using ax.annotate with arrowprops: arrowstyle='->', color=#464B51, lw=1.8, mutation_scale=18, shrinkA=0, shrinkB=0. All text in color=#000000, fontweight='normal', no bbox. Set `plt.rcParams['font.size'] = 10` globally. Render at 150 DPI, 8x4 inches, transparent background. Save with `bbox_inches='tight', pad_inches=0.2` to prevent any text clipping at edges.
+- Step 3: Use Python with matplotlib. Set `matplotlib.rcParams['font.family'] = 'Helvetica Neue'` for clean typography. Use FancyBboxPatch (rounding_size=0.14, facecolor=#9DC7FE, edgecolor=#464B51, linewidth=1.5) for boxes — no shadow patches. Draw arrows by connecting box edge midpoints (right-center→left-center for horizontal, bottom-center→top-center for vertical) using ax.annotate with arrowprops: arrowstyle='->', color=#FFFFFF, lw=1.8, mutation_scale=18, shrinkA=0, shrinkB=0. All text in color=#000000, fontweight='normal', no bbox. Set `plt.rcParams['font.size'] = 10` globally. Render at 150 DPI, 8x4 inches, transparent background. Save with `bbox_inches='tight', pad_inches=0.2` to prevent any text clipping at edges.
 - Step 4: Simplify where possible to keep the diagram clean.
 - Step 5: Check for accuracy.
 - Step 6: Output the image.
